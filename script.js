@@ -139,3 +139,40 @@ const headerLogoConatiner = document.querySelector('.main-header__logo-container
 headerLogoConatiner.addEventListener('click', () => {
   location.href = 'index.html'
 })
+
+// integration of the form 
+
+let form=document.querySelector('.contact__form')
+
+form.addEventListener('submit',async (e)=>{
+
+  e.preventDefault();
+
+const nameField=document.getElementById('nameField')
+const emailField=document.getElementById('emailField')
+const messageField=document.getElementById('messageField')
+
+const nameValue=nameField.value;
+const emailValue=emailField.value;
+const messageValue=messageField.value;
+
+const response=await fetch('https://vast-plum-indri-tutu.cyclic.cloud/api/v1/contact',{
+  method:'POST',
+  headers:{
+    'Content-Type': 'application/json',
+  },
+  body:JSON.stringify({
+    name:nameValue,
+    email:emailValue,
+    message:messageValue
+  })
+
+})
+
+//log the data in console
+
+const Data=await response.json()
+console.log(Data)
+
+
+})
