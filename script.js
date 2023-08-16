@@ -142,7 +142,7 @@ headerLogoConatiner.addEventListener('click', () => {
 
 // integration of the form 
 
-let form=document.querySelector('.contact__form')
+const form=document.querySelector('.contact__form')
 
 form.addEventListener('submit',async (e)=>{
 
@@ -174,5 +174,14 @@ const response=await fetch('https://vast-plum-indri-tutu.cyclic.cloud/api/v1/con
 const Data=await response.json()
 console.log(Data)
 
+nameField.value='';
+emailField.value='';
+messageField.value='';
 
+  // Display alert based on response
+  if (response.ok) {
+    window.alert('Email sent successfully.');
+  } else {
+    window.alert('Email was not sent. Please try again later.');
+  }
 })
