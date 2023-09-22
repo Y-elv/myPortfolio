@@ -173,10 +173,12 @@ const response=await fetch('https://vast-plum-indri-tutu.cyclic.cloud/api/v1/con
 
   }
 catch(error){
-
+console.log("the error is ",error)
 }
-form.reset()
-
+setTimeout(function() {
+  alert("Successfully sent!");
+  form.reset(); // Reset the form
+}, 1000);
  
 
 })
