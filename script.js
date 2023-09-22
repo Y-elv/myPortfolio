@@ -173,7 +173,7 @@ const response=await fetch('https://vast-plum-indri-tutu.cyclic.cloud/api/v1/con
 
   }
 catch(error){
-console.log("the error is ",error)
+console.log("the error in your system is ",error)
 }
 setTimeout(function() {
   alert("Successfully sent!");
